@@ -97,8 +97,8 @@ export default function withGluestackUI(nextConfig: any = {}) {
   const updatedNextConfig = {
     ...nextConfig,
     transpilePackages: gluestackUITranspileModules,
-    webpack: (config: any) => {
-      config = nextConfig.webpack ? nextConfig.webpack(config) : config;
+    webpack: (config: any, options: any) => {
+      config = nextConfig.webpack ? nextConfig.webpack(config, options) : config;
 
       config.resolve.alias = {
         ...(config.resolve.alias || {}),
